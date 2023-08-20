@@ -11,24 +11,24 @@
 <body>
     <header></header>
     <h1>Rock Paper Scissors</h1>
-    <section>
+    <section id="scoreboard">
         <p>You v.s. The Computer</p>
-        <p>Your Score: 0</p>
-        <p>The Computer's score: 0</p>
+        <p id="playerScore">Your Score: 0</p>
+        <p id="computerScore">The Computer's score: 0</p>
     </section>
 
-    <section>
+    <section id="Player">
         <h4>Make your choice:</h4>
-        <img src="./resources/right-facing_fist.png" alt="">
+        <img id="yourChoice" src="./resources/question_black.png" alt="">
         <br>
-        <button>Rock 🤜</button>
-        <button>Paper ✋</button>
-        <button>Scissors ✌️</button>
+        <button id="Rock">Rock 🤜</button>
+        <button id="Paper">Paper ✋</button>
+        <button id="Scissors">Scissors ✌️</button>
     </section>
 
-    <section>
+    <section id="Computer">
         <h4>The computer chose: </h4>
-        <img src="./resources/raised_hand_with_fingers_splayed.png" alt="">
+        <img id="computerChoice" src="./resources/question_black.png" alt="">
 
     </section>
 
@@ -36,7 +36,7 @@
         <p>Result: </p>
         <p>numbers updating</p>
         <p>Current Score: </p>
-        <button>Play Again</button>
+        <button id="playAgain">Play Again</button>
     </section>
 
 </body>
