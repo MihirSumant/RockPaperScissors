@@ -91,6 +91,12 @@ paper.onclick = () => {
   playerChoiceImg.src = './resources/paper-hand.png';
   playerChoiceImg.alt = 'hand emoji for paper';
   playerChoice = 'paper';
+  computerChoice = getComputerChoice();
+  result.innerHTML = determineWinner(playerChoice, computerChoice);
+  paper.disabled = true;
+  playerScoreDisplay.innerHTML = playerScore;
+  computerScoreDisplay.innerHTML = computerScore;
+  finalScoreDisplay.innerHTML = `${playerScore} - ${computerScore}`;
 }
 
 scissors.onclick = () => {  
@@ -99,6 +105,12 @@ scissors.onclick = () => {
   playerChoiceImg.src = './resources/scissors-hand.png';
   playerChoiceImg.alt = 'hand emoji for scissors';
   playerChoice = 'scissors';
+  computerChoice = getComputerChoice();
+  result.innerHTML = determineWinner(playerChoice, computerChoice);
+  scissors.disabled = true;
+  playerScoreDisplay.innerHTML = playerScore;
+  computerScoreDisplay.innerHTML = computerScore;
+  finalScoreDisplay.innerHTML = `${playerScore} - ${computerScore}`;
 }
 
 
