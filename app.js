@@ -10,6 +10,9 @@ const playerChoiceImg = document.getElementById('playerChoice');
 const playAgain = document.getElementById('playAgain'); 
 const computerChoiceImg = document.getElementById('computerChoice');
 
+const playerScoreDisplay = document.getElementById('playerScore');
+const computerScoreDisplay = document.getElementById('computerScore');
+const finalScoreDisplay = document.getElementById('currentScore');
 let result = document.getElementById('result');
 
 const getComputerChoice = () => {
@@ -74,9 +77,12 @@ rock.onclick = () => {
   playerChoiceImg.src = './resources/rock-hand.png';
   playerChoiceImg.alt = 'hand emoji for rock';
   playerChoice = 'rock';
-  console.log(playerChoice);
   computerChoice = getComputerChoice();
   result.innerHTML = determineWinner(playerChoice, computerChoice);
+  rock.disabled = true;
+  playerScoreDisplay.innerHTML = playerScore;
+  computerScoreDisplay.innerHTML = computerScore;
+  finalScoreDisplay.innerHTML = `${playerScore} - ${computerScore}`;
 }
 
 paper.onclick = () => {
