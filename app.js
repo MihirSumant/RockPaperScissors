@@ -2,6 +2,8 @@ let playerScore = 0;
 let computerScore = 0;
 let playerChoice = '';
 let computerChoice = '';
+let numOfGames = 0;
+let numOfDraws = 0;
 
 const rock = document.getElementById('Rock');
 const paper = document.getElementById('Paper');
@@ -13,7 +15,9 @@ const computerChoiceImg = document.getElementById('computerChoice');
 const playerScoreDisplay = document.getElementById('playerScore');
 const computerScoreDisplay = document.getElementById('computerScore');
 const finalScoreDisplay = document.getElementById('currentScore');
-let result = document.getElementById('result');
+const result = document.getElementById('matchResult');
+const gameCount = document.getElementById('numOfGames');
+const drawCount = document.getElementById('numofDraws');
 
 const getComputerChoice = () => {
   let rolledNumber = Math.floor(Math.random()*3);
@@ -35,6 +39,7 @@ const getComputerChoice = () => {
 
 const determineWinner = (playerChoice, computerChoice) => {
   if(playerChoice === computerChoice) {
+    numOfDraws++;
     return "The game is a draw!";
   }
   else {
@@ -71,7 +76,8 @@ const determineWinner = (playerChoice, computerChoice) => {
   }
 }
 
-rock.onclick = () => {  
+rock.onclick = () => {
+  numOfGames++;  
   paper.disabled = true;
   scissors.disabled = true;
   playerChoiceImg.src = './resources/rock-hand.png';
@@ -82,10 +88,13 @@ rock.onclick = () => {
   rock.disabled = true;
   playerScoreDisplay.innerHTML = playerScore;
   computerScoreDisplay.innerHTML = computerScore;
-  finalScoreDisplay.innerHTML = `${playerScore} - ${computerScore}`;
+  gameCount.innerHTML = `Games played: ${numOfGames}`;
+  drawCount.innerHTML = `Draws: ${numOfDraws}`;
+  finalScoreDisplay.innerHTML = `Current Score: ${playerScore} - ${computerScore}`;
 }
 
 paper.onclick = () => {
+  numOfGames++;
   rock.disabled = true;
   scissors.disabled = true;
   playerChoiceImg.src = './resources/paper-hand.png';
@@ -99,7 +108,8 @@ paper.onclick = () => {
   finalScoreDisplay.innerHTML = `${playerScore} - ${computerScore}`;
 }
 
-scissors.onclick = () => {  
+scissors.onclick = () => {
+  numOfGames++;  
   paper.disabled = true;
   rock.disabled = true;
   playerChoiceImg.src = './resources/scissors-hand.png';
