@@ -15,3 +15,8 @@ h1 {
 #Results {
     text-align: center;
 }
+
+#gameScreen {
+    display: flex;
+    justify-content: space-between;
+}
