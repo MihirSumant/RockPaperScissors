@@ -105,7 +105,9 @@ paper.onclick = () => {
   paper.disabled = true;
   playerScoreDisplay.innerHTML = playerScore;
   computerScoreDisplay.innerHTML = computerScore;
-  finalScoreDisplay.innerHTML = `${playerScore} - ${computerScore}`;
+  gameCount.innerHTML = `Games played: ${numOfGames}`;
+  drawCount.innerHTML = `Draws: ${numOfDraws}`;
+  finalScoreDisplay.innerHTML = `Current Score: ${playerScore} - ${computerScore}`;
 }
 
 scissors.onclick = () => {
@@ -120,7 +122,9 @@ scissors.onclick = () => {
   scissors.disabled = true;
   playerScoreDisplay.innerHTML = playerScore;
   computerScoreDisplay.innerHTML = computerScore;
-  finalScoreDisplay.innerHTML = `${playerScore} - ${computerScore}`;
+  gameCount.innerHTML = `Games played: ${numOfGames}`;
+  drawCount.innerHTML = `Draws: ${numOfDraws}`;
+  finalScoreDisplay.innerHTML = `Current Score: ${playerScore} - ${computerScore}`;
 }
 
 
